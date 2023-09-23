@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  apache:
+    build: ./apache
+    volumes:
+      - apache:/var/www/html/
+    ports:
+      - 3000:80
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql:/var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: #設定する
+volumes:
+  apache:
+  mysql:
